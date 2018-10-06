@@ -1,7 +1,7 @@
 {
   "name": "movie-quotes",
   "version": "1.0.0",
-  "description": "Starting setup for react redux project",
+  "description": "Demo for User auth using ReactJS and ReduxJS",
   "main": "index.js",
   "scripts": {
     "start": "node dev_server.js",
