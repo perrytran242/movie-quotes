@@ -13,11 +13,11 @@ import { secret, people} from '../data/lists';
 
 const App = () => (
     <div>
-        <Nav/>
+        <Nav/> 
         <div className="container">
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
-            <Route path="//movie-quote" component={MovieQuotes}/>
+            <Route path="/movie-quote" component={MovieQuotes}/>
             <Route path="/person-list" render={ props => <List {...props} title="Secret Operatives List" list={people}/>}/>
             <Route path="/secret-list" render={ props => <List {...props} title="Secret Operatives List" list={secret}/>}/>
             <Route path="/sign-in" component={SignIn}/>
