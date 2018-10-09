@@ -8,8 +8,9 @@ import MovieQuotes from './movie_quotes';
 import Nav from './nav';
 import SignIn from './sign_in';
 import SignUp from './sign_up';
+import auth from '../hoc/auth';
 
-import { secret, people} from '../data/lists';
+import { secret, people } from '../data/lists';
 
 const App = () => (
     <div>
@@ -19,7 +20,7 @@ const App = () => (
             <Route path="/about" component={About}/>
             <Route path="/movie-quote" component={MovieQuotes}/>
             <Route path="/person-list" render={ props => <List {...props} title="Secret Operatives List" list={people}/>}/>
-            <Route path="/secret-list" render={ props => <List {...props} title="Secret Operatives List" list={secret}/>}/>
+            <Route path="/secret-list" component={auth( props => <List {...props} title="Secret Operatives List" list={secret}/>)}/>
             <Route path="/sign-in" component={SignIn}/>
             <Route path="/sign-up" component={SignUp}/>
         </div>
