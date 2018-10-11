@@ -40,3 +40,26 @@ export const signOut = () => {
         type: types.SIGN_OUT
     }
 }
+
+export const getMovieQuote = () => async dispatch => {
+    try {
+
+        const axiosConfig = {
+            headers: {
+                authorization: localStorage.getItem('token'),
+            }
+        }
+
+        const response = await axios.get('http://api.reactprototypes.com', axiosConfig);
+
+        console.log('Movie Quote Response:', response);
+
+        dispatch({
+            type: types.GET_MOVIE_QUOTE,
+            quote: response.data.message,
+        });
+
+    } catch(error) {
+        console.log('Movie Quote Error:', error.message);
+    }
+}
