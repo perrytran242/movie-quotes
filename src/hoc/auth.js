@@ -10,7 +10,7 @@ export default (WrappedComponent) => {
         componentDidUpdate() {
             this.checkAuth();
         }
-
+        
         checkAuth() {
             if(!this.props.auth) {
                 this.props.history.push('/sign-in');
